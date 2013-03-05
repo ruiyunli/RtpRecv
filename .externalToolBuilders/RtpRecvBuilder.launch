@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramBuilderLaunchConfigurationType">
+<stringAttribute key="org.eclipse.debug.core.ATTR_REFRESH_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;resources&gt;&#13;&#10;&lt;item path=&quot;/RtpRecv/jni&quot; type=&quot;2&quot;/&gt;&#13;&#10;&lt;/resources&gt;}"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="true"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_BUILD_SCOPE" value="${working_set:&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;resources&gt;&#13;&#10;&lt;item path=&quot;/RtpRecv&quot; type=&quot;4&quot;/&gt;&#13;&#10;&lt;/resources&gt;}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="D:\cygwin\bin\bash.exe"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_RUN_BUILD_KINDS" value="incremental,"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="--login -c &quot;cd /cygdrive/d/MyDocuments/Others/Android/RtpRecv &amp;&amp; export NDK_MODULE_PATH=/cygdrive/d/MyDocuments/Others/Android/RtpRecv &amp;&amp; $NDK/ndk-build NDK_PROJECT_PATH=$NDK_MODULE_PATH&quot;"/>
+<booleanAttribute key="org.eclipse.ui.externaltools.ATTR_TRIGGERS_CONFIGURED" value="true"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="D:\cygwin\bin"/>
+</launchConfiguration>

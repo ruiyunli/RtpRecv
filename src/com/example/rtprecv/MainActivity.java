@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 		System.loadLibrary("rtp-jni");		
 	}
 	
-	private native void RtpTest();  
+	private native int RtpTest();  
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +34,14 @@ public class MainActivity extends Activity {
         System.out.println("-start recv-");
         
         btnStart.setOnClickListener(new OnClickListener() {
-			
+			int recvCount = 0;
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				RtpTest();
+				recvCount = RtpTest();
 									
-				textLog.setText("packet send over!");
+				textLog.setText("packet received:" + recvCount);
 			}
 		});
         

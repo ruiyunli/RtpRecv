@@ -36,7 +36,7 @@
 //
 #ifdef __cplusplus
 extern "C" {
-void Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv *, jobject);
+int Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv *, jobject);
 }
 #endif
 
@@ -58,11 +58,11 @@ void Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv *, jobject);
 #define TIME_STAMP 1.0/10.0
 
 
-void Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv* env, jobject thiz)
+int Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv* env, jobject thiz)
 {
  	RTPSession sess;	//RTPSession类来实例化此次的RTP会话
 	uint16_t portbase;
-	int status,i,num;
+	int status,i,num,recvCount;
 
     //1、配置信息
 	//包括本地端口
@@ -92,6 +92,7 @@ void Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv* env, jobject thiz)
 	LOGD("ready");
 
 	//5、发送及接受数据包
+	recvCount = 0;
 	for (i = 1 ; i <= num ; i++)
 	{
 		//为了保证source table（数据源列表）不会改动，类似GotoFirstSourceWithData等函数
@@ -108,6 +109,7 @@ void Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv* env, jobject thiz)
 				while ((pack = sess.GetNextPacket()) != NULL)
 				{
 					// You can examine the data here
+					recvCount++;
 					LOGD("!!!!!Got packet!!!!!");
 					// we don't longer need the packet, so we'll delete it
 					sess.DeletePacket(pack);
@@ -128,7 +130,7 @@ void Java_com_example_rtprecv_MainActivity_RtpTest(JNIEnv* env, jobject thiz)
 	sess.BYEDestroy(RTPTime(10,0),0,0);
 
 
-	return;
+	return recvCount;
 }
 
 
